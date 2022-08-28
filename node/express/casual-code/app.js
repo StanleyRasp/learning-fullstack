@@ -4,9 +4,13 @@ const express = require("express");
 const req = require("express/lib/request");
 const Joi = require("joi");
 const process = require("process");
-const app = express();
+const log = require("./logger");
 
 // express app object
+const app = express();
+
+// set up middleware
+app.use(log);
 app.use(express.json());
 
 // pseudo database
